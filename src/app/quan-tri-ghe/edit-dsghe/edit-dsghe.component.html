@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <h2 style="font-size: 20px;">Them Ghe</h2>
+            <input type="text" class="form-control mb-2" #ten placeholder="Nhap so ghe">
+            <input type="text" class="form-control mb-2" #soGhe placeholder="Nhap ten ghe">
+            <input type="text" class="form-control mb-2" #Gia placeholder="Nhap gia">
+            <input type="text" class="form-control mb-2" #trangThai placeholder="Nhap trang thai">
+            <button class="btn btn-success" (click)="themGheParent(ten.value,soGhe.value,Gia.value,trangThai.value)">Add seat</button>
+        </div>
+    </div>
+</div>
+<br>
+<app-danh-sach-ghe></app-danh-sach-ghe>

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <form [formGroup]="formDangNhap" (ngSubmit)="Dangnhap()">
+                <h4 class="display-4">Dang Nhap</h4>
+                <div class="form-group">
+                    <label for="">Tai Khoan</label>
+                    <input type="text" class="form-control" formControlName="TaiKhoan">
+                    <div *ngIf="formDangNhap.get('TaiKhoan').invalid && formDangNhap.get('TaiKhoan').touched">
+                        <div class="text-danger" *ngIf="formDangNhap.get('TaiKhoan').errors['required']">
+                            Tai khoan khong duoc de trong
+                        </div>
+                        <div class="text-danger" *ngIf="formDangNhap.get('TaiKhoan').errors['pattern']">
+                            Tai khoan chi bao gom chu và so
+                        </div>
+                        <div class="text-danger" *ngIf="formDangNhap.get('TaiKhoan').errors['khongHopLe']">
+                            Tai khoan khong hop le
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Mat Khau</label>
+                    <input type="text" class="form-control" formControlName="MatKhau">
+                    <div *ngIf="formDangNhap.get('MatKhau').invalid && formDangNhap.get('MatKhau').touched">
+                        <div class="text-danger" *ngIf="formDangNhap.get('MatKhau').errors['required']">
+                            Mat khau khong duoc de trong
+                        </div>
+                        <div class="text-danger" *ngIf="formDangNhap.get('MatKhau').errors['minlength'] ||  formDangNhap.get('MatKhau').errors['maxlength']">
+                            Mat khau tu 6 - 12 ki tu
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-success">Dang Nhap</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
